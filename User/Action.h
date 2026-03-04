@@ -33,5 +33,6 @@ void Return_To_Main(void);
 
 /* ========== 系统更新函数 ========== */
 void Update_System_Uptime(void);
+extern uint8_t fan_auto_mode;
 
 #endif /* __ACTION_H */

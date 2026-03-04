@@ -95,11 +95,11 @@
         {
             "name": "Target 1",
             "includePath": [
-                "d:\\WORK\\STM32\\毕设\\environment_sensor\\Start",
-                "d:\\WORK\\STM32\\毕设\\environment_sensor\\User",
-                "d:\\WORK\\STM32\\毕设\\environment_sensor\\Library",
-                "d:\\WORK\\STM32\\毕设\\environment_sensor\\System",
-                "d:\\WORK\\STM32\\毕设\\environment_sensor\\Hardware",
+                "d:\\WORK\\STM32\\毕设\\environment_sensor\\environment_sensor\\Start",
+                "d:\\WORK\\STM32\\毕设\\environment_sensor\\environment_sensor\\User",
+                "d:\\WORK\\STM32\\毕设\\environment_sensor\\environment_sensor\\Library",
+                "d:\\WORK\\STM32\\毕设\\environment_sensor\\environment_sensor\\System",
+                "d:\\WORK\\STM32\\毕设\\environment_sensor\\environment_sensor\\Hardware",
                 "D:\\KEILV\\ARM\\ARMCC\\include",
                 "D:\\KEILV\\ARM\\ARMCC\\include\\rw"
             ],

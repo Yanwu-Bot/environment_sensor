@@ -30,14 +30,6 @@
 .\objects\main.o: .\Library\misc.h
 .\objects\main.o: .\System\Delay.h
 .\objects\main.o: .\Hardware\OLED.h
-.\objects\main.o: .\Hardware\Key.h
-.\objects\main.o: User\menu.h
-.\objects\main.o: .\Hardware\LED.h
-.\objects\main.o: .\Hardware\Buzzer.h
-.\objects\main.o: .\Hardware\JDY-31.h
-.\objects\main.o: D:\KEILV\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\main.o: .\Hardware\Light.h
 .\objects\main.o: .\Hardware\AHT20.h
-.\objects\main.o: .\Hardware\mq2.h
-.\objects\main.o: .\Hardware\L9110.h
-.\objects\main.o: User\Action.h
+.\objects\main.o: .\Hardware\I2C_Hardware.h
+.\objects\main.o: D:\KEILV\ARM\ARMCC\Bin\..\include\stdio.h

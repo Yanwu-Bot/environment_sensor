@@ -24,16 +24,16 @@ extern uint32_t alarm_count;
 extern uint8_t bluetooth_connected;
 
 // 阈值变量（仅用于显示）
-static uint16_t gas_normal_threshold = 500;   // 气体正常阈值
+// static uint16_t gas_normal_threshold = 500;   // 气体正常阈值
 static uint16_t gas_warning_threshold = 800;  // 气体警告阈值
-static uint16_t gas_alarm_threshold = 1000;   // 气体报警阈值
-static uint16_t temp_normal_low = 200;        // 温度正常下限（20.0℃）
-static uint16_t temp_normal_high = 300;       // 温度正常上限（30.0℃）
-static uint16_t temp_cold_threshold = 150;    // 过冷阈值（15.0℃）
-static uint16_t temp_hot_threshold = 350;     // 过热阈值（35.0℃）
+// static uint16_t gas_alarm_threshold = 1000;   // 气体报警阈值
+// static uint16_t temp_normal_low = 200;        // 温度正常下限（20.0℃）
+// static uint16_t temp_normal_high = 300;       // 温度正常上限（30.0℃）
+// static uint16_t temp_cold_threshold = 150;    // 过冷阈值（15.0℃）
+// static uint16_t temp_hot_threshold = 350;     // 过热阈值（35.0℃）
 
 // 风扇控制变量
-static uint8_t fan_auto_mode = 0;  // 0:手动, 1:自动
+uint8_t fan_auto_mode = 1;  // 0:手动, 1:自动
 
 // 外部函数声明
 extern uint32_t Get_Tick(void);
@@ -133,7 +133,7 @@ void TempHum_View(void)
     
     while(!exit_flag) {
         // 读取温湿度数据
-        uint8_t read_status = AHT20_ReadTempHum(&current_temp, &current_humi);
+        uint8_t read_status = AHT20_ReadData(&current_temp, &current_humi);
         
         if (read_status == 0) {  // 读取成功
             // 显示温度（保留一位小数）
@@ -157,14 +157,14 @@ void TempHum_View(void)
             OLED_ShowChar(3, 10, '%');
             
             // 根据温湿度指示LED
-            if (current_temp > 20 && current_temp < 30 && 
-                current_humi > 40 && current_humi < 70) {
-                LEDG_ON();
-                LEDR_OFF();
-            } else {
-                LEDR_ON();
-                LEDG_OFF();
-            }
+            // if (current_temp > 20 && current_temp < 30 && 
+            //     current_humi > 40 && current_humi < 70) {
+            //     LEDG_ON();
+            //     LEDR_OFF();
+            // } else {
+            //     LEDR_ON();
+            //     LEDG_OFF();
+            // }
             
             // 每5次发送一次数据
             send_count++;
@@ -234,18 +234,12 @@ void Gas_View(void)
         switch(gas_level) {
             case SMOKE_LEVEL_NORMAL:
                 OLED_ShowString(3, 7, "Normal ");
-                LEDG_ON();
-                LEDR_OFF();
                 break;
             case SMOKE_LEVEL_WARNING:
                 OLED_ShowString(3, 7, "Warning");
-                LEDG_ON();
-                LEDR_ON();
                 break;
             case SMOKE_LEVEL_ALARM:
                 OLED_ShowString(3, 7, "ALARM! ");
-                LEDR_ON();
-                LEDG_OFF();
                 BUZZER_ON();
                 Delay_ms(50);
                 BUZZER_OFF();
@@ -299,8 +293,6 @@ void Gas_View(void)
     OLED_ShowString(3, 1, "Exiting...");
     Delay_ms(200);
     
-    LEDR_OFF();
-    LEDG_OFF();
     Menu_Display();
 }
 
@@ -318,7 +310,7 @@ void Fan_Manual(void)
     OLED_ShowString(1, 1, "=== Fan Control ===");
     OLED_ShowString(2, 1, "Mode: Manual");
     OLED_ShowString(3, 1, "Fan: ----");
-    OLED_ShowString(4, 1, "K1:ON K2:OFF K3:Auto K4:Back");
+    OLED_ShowString(4, 1, "-------------------");
     
     // 发送开始消息
     Send_Message_To_Phone("[FAN] Enter fan control mode");
@@ -389,9 +381,7 @@ void Fan_ON(void)
     Fan_Forward();
     fan_auto_mode = 0;
     Send_Message_To_Phone("[FAN] Manual: Fan ON");
-    LEDG_ON();
     Delay_ms(50);
-    LEDG_OFF();
 }
 
 /**
@@ -402,9 +392,7 @@ void Fan_OFF(void)
     Fan_Stop();
     fan_auto_mode = 0;
     Send_Message_To_Phone("[FAN] Manual: Fan OFF");
-    LEDR_ON();
     Delay_ms(50);
-    LEDR_OFF();
 }
 
 /**
@@ -414,9 +402,7 @@ void Fan_Auto(void)
 {
     fan_auto_mode = 1;
     Send_Message_To_Phone("[FAN] Auto mode enabled");
-    LEDB_ON();
     Delay_ms(50);
-    LEDB_OFF();
 }
 
 /* ========== 阈值查看功能 ========== */

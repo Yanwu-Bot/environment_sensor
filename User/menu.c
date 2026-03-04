@@ -90,7 +90,7 @@ void Menu_Init(void)
     fan_items[0] = create_item(1, "Fan ON", Fan_ON);            // 打开风扇
     fan_items[1] = create_item(2, "Fan OFF", Fan_OFF);          // 关闭风扇
     fan_items[2] = create_item(3, "Auto Mode", Fan_Auto);       // 自动模式
-    fan_items[3] = create_item(4, "<- Back", NULL);             // 返回
+    fan_items[3] = create_item(4, "Fan Run", Fan_Manual);             // 返回
     link_siblings(fan_items, 4);
     set_child(main_items[1], fan_items[0]);  // 主菜单2有子菜单
     

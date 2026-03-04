@@ -815,6 +815,16 @@
               <FileType>5</FileType>
               <FilePath>.\Hardware\MQ2.h</FilePath>
             </File>
+            <File>
+              <FileName>I2C_Hardware.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\I2C_Hardware.h</FilePath>
+            </File>
+            <File>
+              <FileName>I2C_Hardware.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\I2C_Hardware.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

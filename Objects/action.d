@@ -39,5 +39,6 @@
 .\objects\action.o: D:\KEILV\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\action.o: .\Hardware\Light.h
 .\objects\action.o: .\Hardware\AHT20.h
+.\objects\action.o: .\Hardware\I2C_Hardware.h
 .\objects\action.o: .\Hardware\mq2.h
 .\objects\action.o: .\Hardware\L9110.h

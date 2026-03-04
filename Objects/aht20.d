@@ -1,5 +1,6 @@
 .\objects\aht20.o: Hardware\AHT20.c
 .\objects\aht20.o: Hardware\AHT20.h
+.\objects\aht20.o: Hardware\I2C_Hardware.h
 .\objects\aht20.o: .\Start\stm32f10x.h
 .\objects\aht20.o: .\Start\core_cm3.h
 .\objects\aht20.o: D:\KEILV\ARM\ARMCC\Bin\..\include\stdint.h
@@ -30,5 +31,3 @@
 .\objects\aht20.o: .\Library\stm32f10x_wwdg.h
 .\objects\aht20.o: .\Library\misc.h
 .\objects\aht20.o: .\System\Delay.h
-.\objects\aht20.o: D:\KEILV\ARM\ARMCC\Bin\..\include\cstddef
-.\objects\aht20.o: D:\KEILV\ARM\ARMCC\Bin\..\include\stddef.h
