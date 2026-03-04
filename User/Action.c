@@ -25,7 +25,7 @@ extern uint8_t bluetooth_connected;
 
 // 阈值变量（仅用于显示）
 // static uint16_t gas_normal_threshold = 500;   // 气体正常阈值
-static uint16_t gas_warning_threshold = 800;  // 气体警告阈值
+static uint16_t gas_warning_threshold = 2300;  // 气体警告阈值
 // static uint16_t gas_alarm_threshold = 1000;   // 气体报警阈值
 // static uint16_t temp_normal_low = 200;        // 温度正常下限（20.0℃）
 // static uint16_t temp_normal_high = 300;       // 温度正常上限（30.0℃）

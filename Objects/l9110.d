@@ -29,4 +29,3 @@
 .\objects\l9110.o: .\Library\stm32f10x_usart.h
 .\objects\l9110.o: .\Library\stm32f10x_wwdg.h
 .\objects\l9110.o: .\Library\misc.h
-.\objects\l9110.o: .\System\Delay.h
